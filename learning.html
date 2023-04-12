@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="learning.js"></script>
+</head>
+<body>
+    <br>
+    <div id="navigation-bar">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="encryption.html">Encryption</a>
+        <a class="link" href="learning.html">Learning</a>  
+    </div>
+
+    <br><br>
+
+    <div id="check-if-num-is-prime" class="programs">
+        Program that checks if a number is prime
+        <br>
+        <form>
+            <input type='radio' name='content_type' id='is_prime-java' onclick="changeImg1(0)" checked="checked"/>&nbsp;Java
+            <input type='radio' name='content_type' id='is_prime-python'onclick="changeImg1(1)"/>&nbsp;Python<br><br>
+         </form>
+        <img id="is_prime-pic" src="images/is_prime-Java.PNG"><br>
+        Check the output! (input any number)<br>
+        <input type="text" id="is_prime-textbox"> <input type="submit" onclick="is_primeOutput()"><br>
+        <p id="is_prime-result"></p>
+    </div>
+    <br>-----------------------------------------------------------------------------------------------------------------------<br><br><br>
+
+
+    <div id="caesar" class="programs">
+        Programs that encipher and decipher with the Caesar Cipher
+        <br>
+        <form>
+        <input type='radio' name='content_type' id='caesar-java' onclick="changeImg2(0)" checked="checked"/>&nbsp;Java
+        <input type='radio' name='content_type' id='caesar-python' onclick="changeImg2(1)"/>&nbsp;Python<br><br>
+        </form>
+        <img id="caesar-pic" src="images/caesar-java.PNG"><br>
+        Check the output! (Encryption)<br>
+        <input type="text" id="caesar-encryption-textbox"> <input type="submit" onclick="caesarEncryptionOutput()"><br>
+        <p id="caesar-encryption-result"></p><br>
+        Check the output! (Decryption)<br>
+        <input type="text" id="caesar-decryption-textbox"> <input type="submit" onclick="caesarDecryptionOutput()"><br>
+        <p id="caesar-decryption-result"></p>
+        (input a message followed by a comma followed by a number)
+    </div>
+    <br>-----------------------------------------------------------------------------------------------------------------------<br><br><br>
+
+
+</body>
+</html>
