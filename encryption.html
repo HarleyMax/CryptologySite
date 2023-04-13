@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="encryption.js"></script>
 </head>
 <body>
     <br>
@@ -14,5 +15,38 @@
         <a class="link" href="encryption.html">Encryption</a>
         <a class="link" href="learning.html">Learning</a>  
     </div>
+    <br><br><br>
+
+    <div id="diffie-hellman">
+        <h3>Diffie-Hellman Key Exchange</h3>
+        g:<input type="text" id="g-textbox">
+        p:<input type="text" id="p-textbox"><br><br>
+        a:<input type="text" id="a-textbox">
+        b:<input type="text" id="b-textbox"><br><br>
+        <p id="diffie-hellman-result"></p>
+        <input type="submit" onclick="diffieHellmanOutput()">
+        <hr color="black">
+    </div>
+
+    <div id="rsa">
+        <h3>RSA Encryption</h3>
+        message(number): <input type="text" id="message-textbox">
+        n:<input type="text" id="n-textbox">
+        e:<input type="text" id="e-textbox">
+        <p id="rsa-result"></p>
+        <input type="submit" onclick="RsaOutput()">
+        <hr color="black">
+    </div>
+
+    <div id="xor-encryption">
+        <h3>Xor Encryption</h3>
+        message(binary number): <input type="text" id="message2-textbox">
+        key(binary number):<input type="text" id="key-textbox">
+        <p id="xor-result"></p>
+        <input type="submit" onclick="XorOutput()">
+        <hr color="black">
+    </div>
+
+
 </body>
 </html>

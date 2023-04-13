@@ -1,4 +1,3 @@
-
 var ImgArray1 = [
     "images/is_prime-java.PNG",
     "images/is_prime-python.PNG",
@@ -98,4 +97,4 @@ function caesarDecryptionOutput() {
         }
         document.getElementById('caesar-decryption-result').innerHTML =  encrypted_message;
     }
-}    
+}  
