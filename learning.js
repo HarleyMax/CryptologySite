@@ -40,58 +40,62 @@ function changeImg2(imgNum) {
 
 function caesarEncryptionOutput() {
     let input = document.getElementById('caesar-encryption-textbox').value;
-    let str = input.substring(0,input.indexOf(","));
-    let shift = parseInt(input.substring(input.indexOf(",")+1));
-    let encrypted_message = "";
-    let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    for (let i = 0; i < str.length; i++) {
-      let char = str[i];
-      let newChar='';
-      if(char == (' ')){
-        newChar = ' ';
+    if(input.substring(input.length-1) != ","){
+        let str = input.substring(0,input.indexOf(","));
+        let shift = parseInt(input.substring(input.indexOf(",")+1));
+        let encrypted_message = "";
+        let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let capsLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        for (let i = 0; i < str.length; i++) {
+        let originalChar = str[i];
+        let lowerCaseChar = originalChar.toLowerCase();
+        let newChar='';
+        if(lowerCaseChar == (' ')){
+            newChar = ' ';
+        }
+        else if (/[a-z]/i.test(lowerCaseChar)) {
+            let charCode = parseInt(lowerCaseChar.charCodeAt(0)); 
+            let originalLetterPosition = charCode - 97;
+            let shiftedLetterPosition = originalLetterPosition + shift;
+            let newIndex = shiftedLetterPosition % 26;
+            newChar = letters[newIndex];
+            if(originalChar == originalChar.toUpperCase()){
+                newChar = capsLetters[newIndex];
+            }
+        }
+        encrypted_message += newChar;
+        }
+        document.getElementById('caesar-encryption-result').innerHTML =  encrypted_message;
     }
-      else if (/[a-z]/i.test(char)) {
-        let charCode = parseInt(str.charCodeAt(i)); 
-        let originalLetterPosition = charCode - 97;
-        let shiftedLetterPosition = originalLetterPosition + shift;
-        let newIndex = shiftedLetterPosition % 26;
-        console.log("charCode:" + charCode);
-        console.log("originalLetterPosition:" + originalLetterPosition);
-        console.log("shiftedLetterPosition:" + shiftedLetterPosition);
-        console.log("newIndex:" + newIndex);
-        newChar = letters[newIndex];
-        
-      }
-      encrypted_message += newChar;
-    }
-    document.getElementById('caesar-encryption-result').innerHTML =  encrypted_message;
 }   
 
 function caesarDecryptionOutput() {
     let input = document.getElementById('caesar-decryption-textbox').value;
-    let str = input.substring(0,input.indexOf(","));
-    let shift = 26 - parseInt(input.substring(input.indexOf(",")+1));
-    let decrypted_message = "";
-    let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    for (let i = 0; i < str.length; i++) {
-      let char = str[i];
-      let newChar='';
-      if(char == (' ')){
-        newChar = ' ';
+    if(input.substring(input.length-1) != ","){
+        let str = input.substring(0,input.indexOf(","));
+        let shift = 26-parseInt(input.substring(input.indexOf(",")+1));
+        let encrypted_message = "";
+        let letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+        let capsLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+        for (let i = 0; i < str.length; i++) {
+        let originalChar = str[i];
+        let lowerCaseChar = originalChar.toLowerCase();
+        let newChar='';
+        if(lowerCaseChar == (' ')){
+            newChar = ' ';
+        }
+        else if (/[a-z]/i.test(lowerCaseChar)) {
+            let charCode = parseInt(lowerCaseChar.charCodeAt(0)); 
+            let originalLetterPosition = charCode - 97;
+            let shiftedLetterPosition = originalLetterPosition + shift;
+            let newIndex = shiftedLetterPosition % 26;
+            newChar = letters[newIndex];
+            if(originalChar == originalChar.toUpperCase()){
+                newChar = capsLetters[newIndex];
+            }
+        }
+        encrypted_message += newChar;
+        }
+        document.getElementById('caesar-decryption-result').innerHTML =  encrypted_message;
     }
-      else if (/[a-z]/i.test(char)) {
-        let charCode = parseInt(str.charCodeAt(i)); 
-        let originalLetterPosition = charCode - 97;
-        let shiftedLetterPosition = originalLetterPosition + shift;
-        let newIndex = shiftedLetterPosition % 26;
-        console.log("charCode:" + charCode);
-        console.log("originalLetterPosition:" + originalLetterPosition);
-        console.log("shiftedLetterPosition:" + shiftedLetterPosition);
-        console.log("newIndex:" + newIndex);
-        newChar = letters[newIndex];
-        
-      }
-      decrypted_message += newChar;
-    }
-    document.getElementById('caesar-decryption-result').innerHTML =  decrypted_message;
 }    
