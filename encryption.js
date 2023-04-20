@@ -8,23 +8,37 @@ function diffieHellmanOutput() {
     let key_a = new BigNumber((B.bigPow(a).bigMod(p)));
     let key_b = new BigNumber(A.bigPow(b).bigMod(p));
     document.getElementById('diffie-hellman-result').innerHTML =
-    "A: " + A + "<br>" + "B: " + B + "<br>" + "Akey: " + key_a + "<br>" + "Bkey: " + key_b;
+    "Public A (g^a mod p): " + A + "<br>" + "Public B (g^b mod p): " + B + "<br>" + "Secret Key A (Public B^a mod p): " + key_a + "<br>" + "Secret Key B (Public A^b mod p): " + key_b;
 }
 
 function RsaOutput() {
-    let message = new BigNumber(document.getElementById('message-textbox').value);
-    let n = new BigNumber(document.getElementById('n-textbox').value);
+	function stringToNumber(str) {
+		let asciiString = '';
+  		for (let i = 0; i < str.length; i++) {
+    		asciiString += str.charCodeAt(i);
+  		}
+  		return asciiString;
+	  }
+	let message = new BigNumber(stringToNumber(document.getElementById('message-textbox').value));
+	let n = new BigNumber(document.getElementById('n-textbox').value);
     let e = new BigNumber(document.getElementById('e-textbox').value);
-    let answer = new BigNumber(message.bigPow(e).bigMod(n));
+   	let answer = new BigNumber(message.bigPow(e).bigMod(n));
     document.getElementById('rsa-result').innerHTML =
     "Encrypted Message: " + answer
 }
 
 function XorOutput() {
-    let message = document.getElementById('message2-textbox').value;
+	function stringToBinary(str) {
+		let binaryString = '';
+		for (let i = 0; i < str.length; i++) {
+		  let binaryValue = str.charCodeAt(i).toString(2);
+		  binaryString += '0'.repeat(8 - binaryValue.length) + binaryValue;
+		}
+		return binaryString;
+	}
+    let message = stringToBinary(document.getElementById('message2-textbox').value);
+	console.log(message);
     let key = document.getElementById('key-textbox').value;
-    console.log(message);
-    console.log(key);
     let answer = "";
     for(let i = 0; i < message.length; i++) {
         if(message.charAt(i) != '1' &&  message.charAt(i) != '0'){
