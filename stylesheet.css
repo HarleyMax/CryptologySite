@@ -1,0 +1,52 @@
+a { 
+    padding:50px;
+    font-size: larger;
+ }
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; color: blue}
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+body{
+    background-color: rgb(46, 68, 68);
+}
+
+.middle {
+    font-size: larger;
+    text-align: center;
+    width: 950px;
+    margin:0 auto;
+    color: rgb(172, 168, 168);
+}
+
+.programs {
+    font-size: 30px;
+}
+
+.sidebar {
+    width: 150px;
+    background-color: #333;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .sidebar a {
+    display: block;
+    color: rgb(200, 198, 198);
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .sidebar a:hover {
+    background-color: #111;
+  }
