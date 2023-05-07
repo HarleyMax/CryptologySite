@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA</title>
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <script src="rsa.js"></script>
+</head>
+<body>
+    <div class="middle">
+        This page will perform operations involving RSA. RSA is an assymetric encryption system. 
+        To use RSA, one needs to come up with two very large prime numbers, p and q. 
+        Then one must find n = p * q, and the euler's totient of n, which is (p-1) * (q-1). You then choose
+        an integer e such that e is more than 1 but less than the euler's totient of n, and also that the greatest
+        common demoninator of e and the euler's totient of n is 1. Then, you find d such that d is the multiplicate inverse
+        of e mod the euler's totient of n. (e,n) is the public key and (d,n) is the private key.
+    </div><br><br>
+
+    <div class="middle" id="rsa-encryption">
+        <h3>RSA Encryption</h3>
+        To encrypt with RSA, you must first convert whatever message is being sent to an integer. 
+        For this site, the message is converted to an integer by finding the ascii values of each 
+        character and combining them into one integer. This integer is then raised to the power of e, 
+        the exponent part of the public key, and computed mod n, the modulo part of the public key. 
+        For the purposes of this website, e <= 999. <br><br>
+
+        message: <input type="text" id="message-textbox">
+        e:<input type="text" id="e-textbox">
+        n:<input type="text" id="n-textbox">
+        <p id="rsa-encryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <input type="submit" onclick="RsaEncryptionOutput()">
+        <hr color="black">
+    </div>
+
+    <div class="middle" id="rsa-decryption">
+        <h3>RSA Decryption</h3>
+        To decrypt with RSA, the ciphertext integer is raised to the power of d, 
+        the exponent part of the private key, and computed mod n, the modulo part of the private key. 
+        The ciphertext must be an integer and for the purposes of this website, d <= 999. <br><br>
+        ciphertext: <input type="text" id="ciphertext-textbox">
+        d:<input type="text" id="d-textbox">
+        n:<input type="text" id="n-textbox-2">
+        <p id="rsa-decryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <input type="submit" onclick="RsaDecryptionOutput()">
+        <hr color="black">
+    </div>
+
+    <div class="sidebar">
+        <a href="../index.html">Home</a>
+        <a href="../modulo/modulo.html">Modular Arithmetic</a>
+        <a href="../caesar/caesar.html">Caesar Cypher</a>
+        <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>
+        <a href="../rsa/rsa.html">RSA</a>
+        <a href="../xor/xor.html">XOR Cypher</a>
+        <a href="../cryptology programs/cryptology-programs.html">Cryptology Programs</a>
+        <a href="../references/references.html">References</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOR Cypher</title>
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <script src="xor.js"></script>
+</head>
+<body>
+    <div class="middle">This page will perform operations involving the XOR cypher</div><br><br>
+
+    <div class="middle" id="xor-encryption">
+        <h3>Xor Encryption</h3>
+        To encrypt with the XOR cipher, first the message and key must be converted to binary. 
+        This is done by, for each character, obtaining the ascii code and converting the ascii 
+        code to a binary string of length 8. Then, the binary version of the message is XORed with
+        the binary version of the key. The key is repeated as necessary to match the length of the 
+        binary message. This binary result is then converted back to a string. Any non-ascii characters 
+        will be denoted as .<br><br>
+
+        message: <input type="text" id="message-textbox">
+        key:<input type="text" id="key-textbox">
+        <p id="xor-encryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <input type="submit" onclick="XorEncryptionOutput()">
+        <hr color="black">
+    </div>
+
+    <div class="sidebar">
+        <a href="../index.html">Home</a>
+        <a href="../modulo/modulo.html">Modular Arithmetic</a>
+        <a href="../caesar/caesar.html">Caesar Cypher</a>
+        <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>
+        <a href="../rsa/rsa.html">RSA</a>
+        <a href="../xor/xor.html">XOR Cypher</a>
+        <a href="../cryptology programs/cryptology-programs.html">Cryptology Programs</a>
+        <a href="../references/references.html">References</a>
+    </div>
+</body>
+</html>
