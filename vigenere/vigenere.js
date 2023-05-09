@@ -24,7 +24,7 @@ function vigenereEncryptionOutput() {
         let shiftCharCode = parseInt(lowerCaseShiftChar.charCodeAt(0)); 
         let originalCharPosition = originalCharCode - 97;
         let shiftCharPosition = shiftCharCode - 97;
-        let newIndex = ((originalCharPosition + shiftCharPosition + 1) % 26);
+        let newIndex = ((originalCharPosition + shiftCharPosition) % 26);
         newChar = letters[newIndex];
         if(originalChar == originalChar.toUpperCase()){
             newChar = capsLetters[newIndex];
@@ -62,7 +62,7 @@ function vigenereDecryptionOutput() {
         let shiftCharCode = parseInt(lowerCaseShiftChar.charCodeAt(0)); 
         let originalCharPosition = originalCharCode - 97;
         let shiftCharPosition = shiftCharCode - 97;
-        let newIndex = (((originalCharPosition - shiftCharPosition - 1) % 26) + 26) % 26;
+        let newIndex = (((originalCharPosition - shiftCharPosition) % 26) + 26) % 26;
         newChar = letters[newIndex];
         if(originalChar == originalChar.toUpperCase()){
             newChar = capsLetters[newIndex];
