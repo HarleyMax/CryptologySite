@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheet.css">
     <script src="modulo.js"></script>
+    <script src="https://kit.fontawesome.com/0dd2f84b76.js" crossorigin="anonymous"></script>
     <title>Modular Arithmetic</title>
 </head>
 <body>
-    <div class="middle">This page will solve some basic modular arithmetic problems for you</div><br>
+    <div class="middle">This page will solve some basic modular arithmetic problems for you</div><br><br><br>
 
     <div class="middle" id="basic-modulo">
         <h3>Modulo</h3>
-        To calculate A mod B, you repeatedly subtract B from A 
-        until subtracting B again would result in a negative number.
-        If A is negative, you add B to A until adding again would result in 
-        a positive number.
+        To calculate A mod B, you must find the remainder that is left over after calculating A ÷ B.
         <br><br>
         <form>
             <label for="num">a</label>
-            <input id="num"><br><br>
+            <input id="num" value=""><br><br>
             <label for="modulo">b</label>
             <input id="modulo"><br><br>
             <input type="submit" onclick="moduloResult()">
@@ -33,7 +31,7 @@
     <div class="middle" id="modulo-inverse">
         <h3>Multiplicative Inverse Calculator</h3>
         To find the multiplicative inverse of a number A mod M, you start at B = 1 and compute A * B mod M.
-        You then increment B and repeat this process until A * B mod M = 1. The B is the multiplicative inverse of A Mod M
+        You then increment B and repeat this process until A * B mod M = 1. The B is the multiplicative inverse of A Mod M.
         <br><br>
         <form>
             <label for="first-num">a</label>
@@ -42,12 +40,28 @@
             <input id="modulo-2"><br><br>
             <input type="submit" onclick="moduloInverseResult()">
         </form>  
-        <h4>a<sup>-1</sup> b modulo m </h4>  
+        <h4 id="modulo-inverse-example">a<sup>-1</sup> b modulo m </h4>  
         <h4 id="modulo-inverse-result">b = </h4> 
+    </div><hr>
+
+    <div class="middle" id="modulo-power-mod">
+        <h3>Power Mod Calculator</h3>
+        This calculator will calculate the result of a<sup>b</sup> modulo m.
+        <br><br>
+        <form>
+            <label for="base">a</label>
+            <input id="base"><br><br>
+            <label for="exponent">b</label>
+            <input id="exponent"><br><br>
+            <label for="modulo-3">m</label>
+            <input id="modulo-3"><br><br>
+            <input type="submit" onclick="powerModResult()">
+        </form>  
+        <h4 id="modulo-power-mod-result"> a<sup>b</sup> modulo m = </h4>  
     </div>
 
     <div class="sidebar">
-        <a href="../index.html">Home</a>
+        <a href="../index.html"><i class="fas fa-home fa-lg"></i></a>
         <a href="../modulo/modulo.html">Modular Arithmetic</a>
         <a href="../caesar/caesar.html">Caesar Cypher</a>
         <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>

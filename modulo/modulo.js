@@ -1,9 +1,20 @@
 function moduloResult() {
     event.preventDefault();
-    let num = document.getElementById("num").value;
-    let modulo = document.getElementById("modulo").value;
+    let num = Number(document.getElementById("num").value);
+    let moduloWithOriginalSign = Number(document.getElementById("modulo").value);
+    let modulo = Math.abs(moduloWithOriginalSign);
     let answer = num % modulo;
-    document.getElementById("modulo-result").innerHTML = num + " mod " + modulo + " = " + answer;
+    if(moduloWithOriginalSign > 0){
+        while(answer < 0){
+            answer += modulo;
+        }
+    }
+    else{
+        while(answer > 0){
+            answer -= modulo;
+        }
+    }
+    document.getElementById("modulo-result").innerHTML = num + " mod " + moduloWithOriginalSign + " = " + answer;
     if(isNaN(answer)){
         document.getElementById("modulo-result").innerHTML = "Incorrect input!"
     }
@@ -32,4 +43,18 @@ function moduloInverseResult() {
         currentResult = (firstNum * answer) % modulo;
     }
     document.getElementById("modulo-inverse-result").innerHTML = "b = " + answer;
+    document.getElementById("modulo-inverse-example").innerHTML = firstNum + "<sup>-1</sup> b " + "modulo " + modulo;
 }
+
+function powerModResult() {
+    event.preventDefault();
+    let base = document.getElementById("base").value;
+    let exponent = document.getElementById("exponent").value;
+    let modulo = document.getElementById("modulo-3").value;
+    answer = (base**exponent) % modulo;
+    document.getElementById("modulo-power-mod-result").innerHTML = base + "<sup>" + exponent + "</sup> modulo " + modulo +  " = " + answer;
+    if(isNaN(answer)){
+        document.getElementById("modulo-power-mod-result").innerHTML = "b is too big!"
+    }
+}
+

@@ -7,10 +7,11 @@ function RsaEncryptionOutput() {
   		return asciiString;
 	  }
 	let message = new BigNumber(stringToNumber(document.getElementById('message-textbox').value));
+	console.log(message);
 	let ePlain = document.getElementById('e-textbox').value;
     let e = new BigNumber(document.getElementById('e-textbox').value);
 	let n = new BigNumber(document.getElementById('n-textbox').value);
-	if(ePlain.length < 4){
+	if(ePlain.length < 5){
 		let answer = new BigNumber(message.bigPow(e).bigMod(n));
 		document.getElementById('rsa-encryption-result').innerHTML = "Encrypted Message: " + answer
 	}
@@ -29,7 +30,7 @@ function RsaDecryptionOutput() {
 	let dPlain = document.getElementById('d-textbox').value;
 	let d = new BigNumber(document.getElementById('d-textbox').value);
 	let n = new BigNumber(document.getElementById('n-textbox-2').value);
-	if(isInt(messagePlain) && dPlain.length < 4){
+	if(isInt(messagePlain) && dPlain.length < 5){
 		console.log(d);
 		console.log(n);
    		let answer = new BigNumber(message.bigPow(d).bigMod(n));

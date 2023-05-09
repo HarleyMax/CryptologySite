@@ -1,15 +1,6 @@
-var ImgArray2 = [
-    "../images/caesar-java.PNG",
-    "../images/caesar-python.PNG",
-    ];
-
-function changeImg2(imgNum) {
-    document.getElementById('caesar-pic').src = ImgArray2[imgNum];
-    }
-
 function caesarEncryptionOutput() {
     let input = document.getElementById('caesar-encryption-textbox-1').value;
-    let shift = document.getElementById('caesar-encryption-textbox-2').value;
+    let shift = Number(document.getElementById('caesar-encryption-textbox-2').value);
     const regex = /[^a-zA-Z\s]/;
     const regex2 = /\D/;
     if(regex.test(input) | regex2.test(shift) | input.length === 0 | shift.length === 0){
@@ -31,6 +22,7 @@ function caesarEncryptionOutput() {
         let originalLetterPosition = charCode - 97;
         let shiftedLetterPosition = originalLetterPosition + shift;
         let newIndex = shiftedLetterPosition % 26;
+        
         newChar = letters[newIndex];
         if(originalChar == originalChar.toUpperCase()){
             newChar = capsLetters[newIndex];
@@ -43,9 +35,7 @@ function caesarEncryptionOutput() {
 
 function caesarDecryptionOutput() {
     let input = document.getElementById('caesar-decryption-textbox-1').value;
-    let shift = document.getElementById('caesar-decryption-textbox-2').value;
-    console.log(input);
-    console.log(shift);
+    let shift = Number(document.getElementById('caesar-decryption-textbox-2').value);
     const regex = /[^a-zA-Z\s]/;
     const regex2 = /\D/;
     if(regex.test(input) | regex2.test(shift) | input.length === 0 | shift.length === 0){
@@ -66,7 +56,12 @@ function caesarDecryptionOutput() {
         let charCode = parseInt(lowerCaseChar.charCodeAt(0)); 
         let originalLetterPosition = charCode - 97;
         let shiftedLetterPosition = originalLetterPosition - shift;
+        while(shiftedLetterPosition < 0){
+            shiftedLetterPosition = shiftedLetterPosition + 26;
+            console.log(shiftedLetterPosition);
+        }
         let newIndex = shiftedLetterPosition % 26;
+        
         newChar = letters[newIndex];
         if(originalChar == originalChar.toUpperCase()){
             newChar = capsLetters[newIndex];

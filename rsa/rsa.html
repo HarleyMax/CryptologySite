@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSA</title>
     <link rel="stylesheet" href="../stylesheet.css">
+    <script src="https://kit.fontawesome.com/0dd2f84b76.js" crossorigin="anonymous"></script>
     <script src="rsa.js"></script>
 </head>
 <body>
@@ -24,31 +25,30 @@
         For this site, the message is converted to an integer by finding the ascii values of each 
         character and combining them into one integer. This integer is then raised to the power of e, 
         the exponent part of the public key, and computed mod n, the modulo part of the public key. 
-        For the purposes of this website, e <= 999. <br><br>
+        For the purposes of this website, e ≤ 9999. <br><br>
 
-        message: <input type="text" id="message-textbox">
-        e:<input type="text" id="e-textbox">
-        n:<input type="text" id="n-textbox">
+        message: <input type="text" id="message-textbox" value="Hello world">
+        e:<input type="text" id="e-textbox" value="17">
+        n:<input type="text" id="n-textbox" value="3233">
         <p id="rsa-encryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
         <input type="submit" onclick="RsaEncryptionOutput()">
-        <hr color="black">
+        <hr>
     </div>
 
     <div class="middle" id="rsa-decryption">
         <h3>RSA Decryption</h3>
         To decrypt with RSA, the ciphertext integer is raised to the power of d, 
         the exponent part of the private key, and computed mod n, the modulo part of the private key. 
-        The ciphertext must be an integer and for the purposes of this website, d <= 999. <br><br>
+        The ciphertext must be an integer and for the purposes of this website, d ≤ 9999. <br><br><hr>
         ciphertext: <input type="text" id="ciphertext-textbox">
-        d:<input type="text" id="d-textbox">
-        n:<input type="text" id="n-textbox-2">
+        d:<input type="text" id="d-textbox" value="2753">
+        n:<input type="text" id="n-textbox-2" value="3233">
         <p id="rsa-decryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
         <input type="submit" onclick="RsaDecryptionOutput()">
-        <hr color="black">
     </div>
 
     <div class="sidebar">
-        <a href="../index.html">Home</a>
+        <a href="../index.html"><i class="fas fa-home fa-lg"></i></a>
         <a href="../modulo/modulo.html">Modular Arithmetic</a>
         <a href="../caesar/caesar.html">Caesar Cypher</a>
         <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheet.css">
     <script src="diffie-hellman.js"></script>
+    <script src="https://kit.fontawesome.com/0dd2f84b76.js" crossorigin="anonymous"></script>
     <title>Diffie-Hellman</title>
 </head>
 <body>
@@ -15,22 +16,21 @@
         meaning that the only factor that g and p share is 1. Each party then decides on their own secret number that is less than p.
         These secret numbers are represented by "a" and "b". Now that the parties have set all of these parameters, calculations can begin.
         Two public keys are generated with the formulas A = g<sup>a</sup> mod p and B = g<sup>b</sup> mod p. Both parties can then obtain the 
-        mutual secret key by calculating  A<sup>b</sup> mod p and B<sup>a</sup> mod p respectively.
-        
+        mutual secret key by calculating  A<sup>b</sup> mod p and B<sup>a</sup> mod p respectively.<br><br>
     </div>
 
     <div class="middle" id="diffie-hellman">
         <h3>Diffie-Hellman Key Exchange</h3>
-        g:<input type="text" id="g-textbox">
-        p:<input type="text" id="p-textbox"><br><br>
-        a:<input type="text" id="a-textbox">
-        b:<input type="text" id="b-textbox"><br><br>
+        g: <input type="text" id="g-textbox" value="96">
+        p: <input type="text" id="p-textbox" value="2143"><br><br>
+        a: <input type="text" id="a-textbox" value="53">
+        b: <input type="text" id="b-textbox" value="39"><br><br>
         <p id="diffie-hellman-result"></p>
         <input type="submit" onclick="diffieHellmanOutput()">
     </div>
 
     <div class="sidebar">
-        <a href="../index.html">Home</a>
+        <a href="../index.html"><i class="fas fa-home fa-lg"></i></a>
         <a href="../modulo/modulo.html">Modular Arithmetic</a>
         <a href="../caesar/caesar.html">Caesar Cypher</a>
         <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>

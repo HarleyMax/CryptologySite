@@ -14,15 +14,16 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 body{
-    background-color: rgb(46, 68, 68);
+    background-color: rgb(40, 75, 75);
 }
 
 .middle {
     font-size: larger;
     text-align: center;
-    width: 950px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 800px;
     margin:0 auto;
-    color: rgb(172, 168, 168);
+    color: rgb(189, 186, 186);
 }
 
 .programs {

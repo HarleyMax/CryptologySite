@@ -6,27 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheet.css">
     <script src="cryptology-programs.js"></script>
+    <script src="https://kit.fontawesome.com/0dd2f84b76.js" crossorigin="anonymous"></script>
     <title>Cryptology Programs</title>
 </head>
 <body>
-    <div class="middle">This page will provide some cryptology programs that weren't already defined in the other parts of the website</div><br><br>
+    <div class="middle">This page will provide some basic programs pertaining to cryptology</div><br><br>
 
-    <div class="middle" id="check-if-num-is-prime" class="programs">
-        Program that checks if a number is prime:
+    <div class="middle" id="check-if-num-is-prime-programs" class="programs">
+        <h3>Programs that check if a number is prime:</h3>
         <br>
         <form>
             <input type='radio' name='content_type' id='is_prime-java' onclick="changeImg1(0)" checked="checked"/>&nbsp;Java
             <input type='radio' name='content_type' id='is_prime-python'onclick="changeImg1(1)"/>&nbsp;Python<br><br>
          </form>
-        <img id="is_prime-pic" src="../images/is_prime-java.PNG"><br>
+        <img id="is_prime-pic" src="../images/is_prime-java.PNG" width="600" height="600"><br>
         Check the output! (input any number)<br>
         <input type="text" id="is_prime-textbox"> 
         <input type="submit" onclick="is_primeOutput()"><br>
-        <p id="is_prime-result"></p>
-    </div>
+        <p id="is_prime-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    </div><hr>
+
+    <div class="middle" id="caesar-programs" class="programs">
+        <h3>Programs that encipher and decipher with the Caesar Cipher:</h3>
+        <br>
+        <form>
+        <input type='radio' name='content_type' id='caesar-java' onclick="changeImg2(0)" checked="checked"/>&nbsp;Java
+        <input type='radio' name='content_type' id='caesar-python' onclick="changeImg2(1)"/>&nbsp;Python<br><br>
+        </form>
+        <img id="caesar-pic" src="../images/caesar-java.PNG"  width="600" height="600"><br>
+    </div><hr>
+
+    <div class="middle" id="coprime-programs" class="programs">
+        <h3>Programs that find if two numbers are coprime:</h3>
+        <br>
+        <form>
+        <input type='radio' name='content_type' id='coprime-java' onclick="changeImg3(0)" checked="checked"/>&nbsp;Java
+        <input type='radio' name='content_type' id='coprime-python' onclick="changeImg3(1)"/>&nbsp;Python<br><br>
+        </form>
+        <img id="coprime-pic" src="../images/coprime-checker-java.PNG"  width="800" height="400"><br>
+    </div><hr>
+
+    <div class="middle" id="eulers-programs" class="programs">
+        <h3>Programs that find the euler's totient of a number:</h3>
+        <br>
+        <form>
+        <input type='radio' name='content_type' id='eulers-java' onclick="changeImg4(0)" checked="checked"/>&nbsp;Java
+        <input type='radio' name='content_type' id='eulers-python' onclick="changeImg4(1)"/>&nbsp;Python<br><br>
+        </form>
+        <img id="eulers-pic" src="../images/eulers-totient-java.PNG"  width="600" height="400"><br>
+    </div><hr>
 
     <div class="sidebar">
-        <a href="../index.html">Home</a>
+        <a href="../index.html"><i class="fas fa-home fa-lg"></i></a>
         <a href="../modulo/modulo.html">Modular Arithmetic</a>
         <a href="../caesar/caesar.html">Caesar Cypher</a>
         <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>
