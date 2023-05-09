@@ -62,3 +62,25 @@ function powerModResult() {
     }
 }
 
+function eulersTotientResult() {
+    event.preventDefault();
+    let original = document.getElementById("euler-num").value;
+    let n = original;
+    let result = n;
+    for (let i = 2; i * i <= n; i++) {
+        if (n % i === 0) {
+          while (n % i === 0) {
+            n /= i;
+          }
+          result -= result / i;
+        }
+      }
+    if (n > 1) {
+        result -= result / n;
+    }
+    document.getElementById("eulers-totient-result").innerHTML = "phi(" + original  + ") = " + result;
+    if(isNaN(result) | original.length > 20){
+        document.getElementById("eulers-totient-result").innerHTML = "incorrect input or the number is too long!";
+    }
+}
+
