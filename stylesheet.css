@@ -28,7 +28,7 @@ body{
 
 @media only screen and (max-width: 600px) {
   .middle {
-    font-size: 600px;
+    width: 400px;
   }
 }
 
