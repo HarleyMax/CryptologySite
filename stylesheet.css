@@ -61,6 +61,7 @@ body{
       position: fixed;
       top: 23%;
       touch-action: auto;
+      overflow: auto;
     }
   }
 
