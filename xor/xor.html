@@ -13,15 +13,15 @@
     <script src="xor.js"></script>
 </head>
 <body>
-    <div class="middle">This page will perform operations involving the XOR cypher</div><br><br>
+    <div class="middle">This page will perform operations involving the XOR cypher.</div><br><br>
 
     <div class="middle" id="xor-encryption">
         <h3>Xor Encryption</h3>
         To encrypt with the XOR cipher, first the message and key must be converted to binary. 
         This is done by, for each character, obtaining the ascii code and converting the ascii 
-        code to a binary string of length 8. Then, the binary version of the message is XORed with
+        code to a binary string of length 8.<br><br> Then, the binary version of the message is XORed with
         the binary version of the key. The key is repeated as necessary to match the length of the 
-        binary message. This binary result is then converted back to a string. Any non-ascii characters 
+        binary message. <br><br>This binary result is then converted back to a string using ascii. Any non-ascii characters 
         will be denoted as .<br><br>
 
         message: <input type="text" id="message-textbox" value="Hello World">

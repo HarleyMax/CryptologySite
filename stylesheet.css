@@ -58,6 +58,7 @@ body{
       width: 95vw;
     }
     body {
+      position: fixed;
       top: 23%;
       touch-action: auto;
     }
