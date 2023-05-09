@@ -41,7 +41,7 @@ body{
     padding-top: 20px;
   }
 
-  @media (max-width: 3000px) {
+  @media (max-width: 600px) {
     .sidebar {
       position: fixed;
       top: 0;
