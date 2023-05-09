@@ -58,7 +58,6 @@ function caesarDecryptionOutput() {
         let shiftedLetterPosition = originalLetterPosition - shift;
         while(shiftedLetterPosition < 0){
             shiftedLetterPosition = shiftedLetterPosition + 26;
-            console.log(shiftedLetterPosition);
         }
         let newIndex = shiftedLetterPosition % 26;
         

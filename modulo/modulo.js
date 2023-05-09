@@ -3,7 +3,11 @@ function moduloResult() {
     let num = Number(document.getElementById("num").value);
     let moduloWithOriginalSign = Number(document.getElementById("modulo").value);
     let modulo = Math.abs(moduloWithOriginalSign);
-    let answer = num % modulo;
+    if(num.toString().length > 20 | moduloWithOriginalSign.toString().length > 20){
+        document.getElementById("modulo-result").innerHTML = "One of the numbers is too big!"
+        return;
+    }
+    let answer = num % modulo;2
     if(moduloWithOriginalSign > 0){
         while(answer < 0){
             answer += modulo;
@@ -28,7 +32,7 @@ function moduloInverseResult() {
     let firstNum = document.getElementById("first-num").value;
     let modulo = document.getElementById("modulo-2").value;
     if(!isInt(firstNum) | !isInt(modulo)){
-        document.getElementById("modulo-inverse-result").innerHTML = "Incorrect input or one of the numbers is too long!";
+        document.getElementById("modulo-inverse-result").innerHTML = "Incorrect input!";
         return;
     }
 
@@ -54,7 +58,7 @@ function powerModResult() {
     answer = (base**exponent) % modulo;
     document.getElementById("modulo-power-mod-result").innerHTML = base + "<sup>" + exponent + "</sup> modulo " + modulo +  " = " + answer;
     if(isNaN(answer)){
-        document.getElementById("modulo-power-mod-result").innerHTML = "b is too big!"
+        document.getElementById("modulo-power-mod-result").innerHTML = "incorrect input or one of the numbers is too big!"
     }
 }
 

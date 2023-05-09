@@ -26,6 +26,12 @@ body{
     color: rgb(189, 186, 186);
 }
 
+@media only screen and (max-width: 600px) {
+  .middle {
+    font-size: 600px;
+  }
+}
+
 .programs {
     font-size: 30px;
 }
