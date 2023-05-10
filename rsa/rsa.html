@@ -30,7 +30,7 @@
         To use RSA, one needs to come up with two very large prime numbers, p and q. 
         Then one must find n = p * q, and the euler's totient of n, which is (p-1) * (q-1).<br><br> You then choose
         an integer e such that e is more than 1 but less than the euler's totient of n, and also that the greatest
-        common demoninator of e and the euler's totient of n is 1. <br><br>Then, you find d such that d is the multiplicate inverse
+        common demoninator of e and the euler's totient of n is 1. <br><br>Then, you find d such that d is the multiplicative inverse
         of e mod the euler's totient of n. <br><br>(e,n) is the public key and (d,n) is the private key.
     </div><br><br>
 
@@ -40,12 +40,12 @@
         For this site, the message is converted to an integer by finding the ascii values of each 
         character and combining them into one integer. <br><br>This integer is then raised to the power of e, 
         the exponent part of the public key, and computed mod n, the modulo part of the public key. 
-        <br><br>For the purposes of this website, e ≤ 200 and the message must be 11 characters or less. <br><br>
+        <br><br>
 
         <div class="mobile-line-breaks">
-            message: <input type="text" id="message-textbox" value="Hello world">
-            e:<input type="text" id="e-textbox" value="17">
-            n:<input type="text" id="n-textbox" value="3233">
+            message: <input type="text" id="message-textbox" value="RSA">
+            e:<input type="text" id="e-textbox" value="65537">
+            n:<input type="text" id="n-textbox" value="145826473">
             <p id="rsa-encryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <input type="submit" onclick="RsaEncryptionOutput()">
             <br><br><hr>
@@ -57,10 +57,10 @@
             <h3>RSA Decryption</h3>
             To decrypt with RSA, the ciphertext integer is raised to the power of d, 
             the exponent part of the private key, and computed mod n, the modulo part of the private key.<br><br>
-            The ciphertext must be an integer and for the purposes of this website, d ≤ 200 and the message must be 11 characters or less. <br><br>
-            ciphertext: <input type="text" id="ciphertext-textbox">
-            d:<input type="text" id="d-textbox">
-            n:<input type="text" id="n-textbox-2">
+            The ciphertext must be an integer.<br><br>
+            ciphertext: <input type="text" id="ciphertext-textbox" value="41434658">
+            d:<input type="text" id="d-textbox" value="93229505">
+            n:<input type="text" id="n-textbox-2" value="145826473">
             <p id="rsa-decryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <input type="submit" onclick="RsaDecryptionOutput()">
         </div>

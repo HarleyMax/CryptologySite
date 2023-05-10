@@ -26,13 +26,13 @@
     </div>
 
     <div class="middle">The Vinegere Cipher is essentially a dynamic Caesar Cipher that decides the shift for each character based on a key. <br><br>
-        It takes a message and a shift. <br><br>It works by 
-        first obtaining the position in the alphabet for all of the characters in the message and in the shift.<br><br> 
-        It then enciphers the message by computing <br><br><b>(position-of-message-character + position-of-shift-character) % 26 </b><br><br>for each character and replacing
-        the original character with the letter of the new position. <br><br>The shift is repeated if it is shorter than the message. <br><br>To decipher you do the same process but
-        subtract the shift letter position instead. <br><br>For the purposes of this site, any characters that aren't a letter
-        are simply encrypted as themselves, but they do still cause the current shift key to move. 
-        The shift key must only contain letters.
+        It takes a message and a key. <br><br>It works by 
+        first obtaining the position in the alphabet for all of the characters in the message and in the key.<br><br> 
+        It then enciphers the message by computing <br><br><b>(position-of-message-character + position-of-key-character) % 26 </b><br><br>for each character and replacing
+        the original character with the letter of the newly calculated position. <br><br>The key is repeated if it is shorter than the message. <br><br>To decipher you do the same process but
+        subtract the key letter position instead. <br><br>For the purposes of this site, any characters in the message that aren't a letter
+        are simply encrypted as themselves, but they do still cause the current position in the key to move. 
+        The key must only contain letters.
     </div><br><br>
 
     <div class="middle" id="vigenere">
@@ -47,9 +47,9 @@
 
             <h3>Vigenere Decryption</h3>
             <label for="vigenere-decryption-textbox-1">Message</label>
-            <input type="text" id="vigenere-decryption-textbox-1">
+            <input type="text" id="vigenere-decryption-textbox-1" value="Zltqh, etkdk!">
             <label for="vigenere-decryption-textbox-2">Shift used</label>
-            <input type="text" id="vigenere-decryption-textbox-2"><br><br>
+            <input type="text" id="vigenere-decryption-textbox-2" value="shift"><br><br>
             <p id="vigenere-decryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <input type="submit" onclick="vigenereDecryptionOutput()"><br>
         </div>

@@ -27,7 +27,8 @@
 
     <div class="middle">The caesar cypher is a very rudimentary way 
         of enciphering text. <br><br>The caesar cypher is initialized by choosing a message, x, and an integer key, k.<br><br> 
-        k is then applied to each letter in x by shifting the letter k positions in the alphabet (Ex. "a" becomes "c" when k is 2).
+        k is then applied to each letter in x by shifting the letter k positions in the alphabet (Ex. "a" becomes "c" when k is 2).<br><br>
+        Message must only be letters
     </div><br><br>
 
     <div class="middle" id="caesar">
@@ -42,9 +43,9 @@
         
             <h3>Caesar Decryption</h3>
             <label for="caesar-decryption-textbox-1">Message</label>
-            <input type="text" id="caesar-decryption-textbox-1">
+            <input type="text" id="caesar-decryption-textbox-1" value="Wtaad ldgas">
             <label for="caesar-decryption-textbox-2">Shift used</label>
-            <input type="text" id="caesar-decryption-textbox-2"><br><br>
+            <input type="text" id="caesar-decryption-textbox-2" value="15"><br><br>
             <input type="submit" onclick="caesarDecryptionOutput()"><br>
             <p id="caesar-decryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
         </div>

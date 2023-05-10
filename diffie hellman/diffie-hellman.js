@@ -1,11 +1,29 @@
 function diffieHellmanOutput() {
-    let g = new BigNumber(document.getElementById('g-textbox').value);
-    let p = new BigNumber(document.getElementById('p-textbox').value);
-    let a = new BigNumber(document.getElementById('a-textbox').value);
-    let b = new BigNumber(document.getElementById('b-textbox').value);
-    let A = new BigNumber(g.bigPow(a).bigMod(p));
-    let B = new BigNumber((g.bigPow(b).bigMod(p)));
-    let key = new BigNumber((B.bigPow(a).bigMod(p)));
+	function modExp(a, b, c) {
+		let res = 1;
+		a = a % c;
+		while (b > 0) {
+		  if (b % 2 == 1) {
+			res = (res * a) % c;
+		  }
+		  b = Math.floor(b / 2);
+		  a = (a * a) % c;
+		}
+		return res;
+	  }
+
+	let g = Number(document.getElementById('g-textbox').value);
+	let p = Number(document.getElementById('p-textbox').value);
+    let a = Number(document.getElementById('a-textbox').value);
+    let b = Number(document.getElementById('b-textbox').value);
+	
+	if(!Number.isInteger(g) | !Number.isInteger(p) | !Number.isInteger(a) | !Number.isInteger(b)){
+		document.getElementById('diffie-hellman-result').innerHTML = "Incorrect input!"
+		return;
+	}
+    let A = modExp(g, a, p);
+    let B = modExp(g, b, p);
+    let key = modExp(B, a, p);
     document.getElementById('diffie-hellman-result').innerHTML =
     "A (g<sup>a</sup> mod p) = " + A + "<br>" + "B (g<sup>b</sup> mod p) = " + B + "<br>" + "Secret Key  (A<sup>b</sup> mod p) or (B<sup>a</sup> mod p) = " + key
 }

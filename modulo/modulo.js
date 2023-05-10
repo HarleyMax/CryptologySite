@@ -25,13 +25,10 @@ function moduloResult() {
 }
 
 function moduloInverseResult() {
-    function isInt(value) {
-        return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
-      }
     event.preventDefault();
-    let firstNum = document.getElementById("first-num").value;
-    let modulo = document.getElementById("modulo-2").value;
-    if(!isInt(firstNum) | !isInt(modulo)){
+    let firstNum = Number(document.getElementById("first-num").value);
+    let modulo =  Number(document.getElementById("modulo-2").value);
+    if(!Number.isInteger(firstNum) | !Number.isInteger(modulo)){
         document.getElementById("modulo-inverse-result").innerHTML = "Incorrect input!";
         return;
     }
@@ -40,6 +37,7 @@ function moduloInverseResult() {
     let answer = 1;
     while(currentResult != 1) {
         if(answer == 100000000) {
+            document.getElementById("modulo-inverse-example").innerHTML = firstNum + "<sup>-1</sup> b " + "modulo " + modulo;
             document.getElementById("modulo-inverse-result").innerHTML = "The inverse modulo doesn't exist or the calculations took too long!";
             return;
         }
@@ -52,14 +50,26 @@ function moduloInverseResult() {
 
 function powerModResult() {
     event.preventDefault();
-    let base = document.getElementById("base").value;
-    let exponent = document.getElementById("exponent").value;
-    let modulo = document.getElementById("modulo-3").value;
-    answer = (base**exponent) % modulo;
-    document.getElementById("modulo-power-mod-result").innerHTML = base + "<sup>" + exponent + "</sup> modulo " + modulo +  " = " + answer;
-    if(isNaN(answer)){
-        document.getElementById("modulo-power-mod-result").innerHTML = "incorrect input or one of the numbers is too big!"
-    }
+    let baseOriginal = Number(document.getElementById("base").value);
+    let exponentOriginal = Number(document.getElementById("exponent").value);
+    let moduloOriginal = Number(document.getElementById("modulo-3").value);
+    let base = baseOriginal;
+    let exponent = exponentOriginal;
+    let modulo = moduloOriginal;
+	if(!Number.isInteger(base) | !Number.isInteger(exponent) | !Number.isInteger(modulo)) {
+		document.getElementById('modulo-power-mod-result').innerHTML = "Incorrect input!"
+		return;
+	}
+	let res = 1;
+    base = base % modulo;
+    while (exponent > 0) {
+    	if (exponent % 2 == 1) {
+           res = (res * base) % modulo;
+    	}
+    	exponent = Math.floor(exponent / 2);
+    	base = (base * base) % modulo;
+  	}
+	document.getElementById('modulo-power-mod-result').innerHTML = baseOriginal + "<sup>" + exponentOriginal + "</sup> modulo " + moduloOriginal + " = " + res;
 }
 
 function eulersTotientResult() {

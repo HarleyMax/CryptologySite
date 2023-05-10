@@ -6,41 +6,43 @@ function RsaEncryptionOutput() {
   		}
   		return asciiString;
 	  }
-	let message = new BigNumber(stringToNumber(document.getElementById('message-textbox').value));
-	let messagePlain = document.getElementById('message-textbox').value;
-    let e = new BigNumber(document.getElementById('e-textbox').value);
-	let ePlain = document.getElementById('e-textbox').value;
-	let n = new BigNumber(document.getElementById('n-textbox').value);
-	let nPlain = document.getElementById('n-textbox').value;
-	if(messagePlain.length < 12 && ePlain <= 200 && nPlain.length < 100){
-		let answer = new BigNumber(message.bigPow(e).bigMod(n));
-		document.getElementById('rsa-encryption-result').innerHTML = "Encrypted Message: " + answer
+	let e = Number(document.getElementById('e-textbox').value);
+	let n = Number(document.getElementById('n-textbox').value);
+	let numberMessage = Number(stringToNumber(document.getElementById('message-textbox').value) % n);
+	if(!Number.isInteger(e) | !Number.isInteger(n) | !Number.isInteger(numberMessage)) {
+		document.getElementById('rsa-encryption-result').innerHTML = "Incorrect input!"
+		return;
 	}
-	else{
-		document.getElementById('rsa-encryption-result').innerHTML = "Incorrect input!";
-	}
-
+	let res = 1;
+  	numberMessage = numberMessage % n;
+    while (e > 0) {
+    	if (e % 2 == 1) {
+           res = (res * numberMessage) % n;
+    	}
+    	e = Math.floor(e / 2);
+    	numberMessage = (numberMessage * numberMessage) % n;
+  	}
+	document.getElementById('rsa-encryption-result').innerHTML = "Encrypted Message = " + res;
 }
 
 function RsaDecryptionOutput() {
-	function isInt(value) {
-        return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
-      }
-	let message = new BigNumber(document.getElementById('ciphertext-textbox').value);
-	let messagePlain = document.getElementById('ciphertext-textbox').value;
-	let dPlain = document.getElementById('d-textbox').value;
-	let d = new BigNumber(document.getElementById('d-textbox').value);
-	let n = new BigNumber(document.getElementById('n-textbox-2').value);
-	let nPlain = document.getElementById('n-textbox-2').value;
-	if(messagePlain.length < 12 && isInt(messagePlain) && dPlain <= 200 && nPlain.length < 100){
-		console.log(d);
-		console.log(n);
-   		let answer = new BigNumber(message.bigPow(d).bigMod(n));
-    	document.getElementById('rsa-decryption-result').innerHTML = "Decrypted Message: " + answer;
+	let e = Number(document.getElementById('d-textbox').value);
+	let n = Number(document.getElementById('n-textbox-2').value);
+	let numberMessage = Number(document.getElementById('ciphertext-textbox').value % n);
+	if(!Number.isInteger(e) | !Number.isInteger(n) | !Number.isInteger(numberMessage)) {
+		document.getElementById('rsa-decryption-result').innerHTML = "Incorrect input!"
+		return;
 	}
-	else{
-		document.getElementById('rsa-decryption-result').innerHTML = "Incorrect input!";
-	}
+	let res = 1;
+  	numberMessage = numberMessage % n;
+    while (e > 0) {
+    	if (e % 2 == 1) {
+           res = (res * numberMessage) % n;
+    	}
+    	e = Math.floor(e / 2);
+    	numberMessage = (numberMessage * numberMessage) % n;
+  	}
+	document.getElementById('rsa-decryption-result').innerHTML = "Decrypted Message = " + res;
 }
 
 BigNumber = function(n, p, r){
