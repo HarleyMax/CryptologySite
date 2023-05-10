@@ -63,6 +63,9 @@ body{
     touch-action: auto;
     overflow: auto;
   }
+  .mobile-line-breaks {
+    white-space: pre-line;
+  }
 }
 
 .sidebar a {
