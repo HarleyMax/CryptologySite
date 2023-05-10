@@ -34,7 +34,6 @@ body{
     width: 150px;
     background-color: #333;
     height: 100%;
-    position: fixed;
     top: 0;
     left: 0;
     overflow-x: hidden;
@@ -43,7 +42,6 @@ body{
 
   @media (max-width: 600px) {
     .sidebar {
-      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
@@ -52,16 +50,14 @@ body{
       display: flex;
       flex-direction: row;
       display: flex;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
     }
     .middle{
       width: 95vw;
     }
     body {
-      position: relative;
-      top: 23%;
       touch-action: auto;
-      overflow: auto;
+      overflow-y: scroll;
     }
   }
 
