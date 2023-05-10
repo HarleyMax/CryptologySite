@@ -1,7 +1,7 @@
 a { 
-    padding:50px;
-    font-size: larger;
- }
+  padding:50px;
+  font-size: larger;
+}
 
 a:link { text-decoration: none; }
 
@@ -14,60 +14,64 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 body{
-    background-color: rgb(40, 75, 75);
+  background-color: rgb(40, 75, 75);
 }
 
 .middle {
-    font-size: larger;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 800px;
-    margin:0 auto;
-    color: rgb(189, 186, 186);
+  font-size: larger;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 800px;
+  margin:0 auto;
+  color: rgb(189, 186, 186);
 }
 
 .programs {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .sidebar {
-    width: 150px;
-    background-color: #333;
-    height: 100%;
+  width: 150px;
+  background-color: #333;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    position: static;
     top: 0;
     left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
+    width: 100vw;
+    height: 20%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
   }
+  .middle{
+    width: 95vw;
+  }
+  body {
+    position: relative;
+    top: 23%;
+    touch-action: auto;
+    overflow: auto;
+  }
+}
 
-  @media (max-width: 600px) {
-    .sidebar {
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 20%;
-      z-index: 9999;
-      display: flex;
-      flex-direction: row;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .middle{
-      width: 95vw;
-    }
-    body {
-      touch-action: auto;
-      overflow-y: scroll;
-    }
-  }
+.sidebar a {
+  display: block;
+  color: rgb(200, 198, 198);
+  padding: 10px;
+  text-decoration: none;
+}
 
-  .sidebar a {
-    display: block;
-    color: rgb(200, 198, 198);
-    padding: 10px;
-    text-decoration: none;
-  }
-
-  .sidebar a:hover {
-    background-color: #111;
-  }
+.sidebar a:hover {
+  background-color: #111;
+}

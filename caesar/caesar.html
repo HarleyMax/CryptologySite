@@ -13,6 +13,18 @@
     </head>
 </head>
 <body>
+    <div class="sidebar">
+        <a href="../index.html"><i class="fas fa-home fa-lg"></i></a>
+        <a href="../modulo/modulo.html">Modular Arithmetic</a>
+        <a href="../caesar/caesar.html">Caesar Cypher</a>
+        <a href="../vigenere/vigenere.html">Vigenere Cypher</a>
+        <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>
+        <a href="../rsa/rsa.html">RSA</a>
+        <a href="../xor/xor.html">XOR Cypher</a>
+        <a href="../cryptology programs/cryptology-programs.html">Cryptology Programs</a>
+        <a href="../references/references.html">References</a>
+    </div>
+
     <div class="middle">The caesar cypher is a very rudimentary way 
         of enciphering text. <br><br>The caesar cypher is initialized by choosing a message, x, and an integer key, k.<br><br> 
         k is then applied to each letter in x by shifting the letter k positions in the alphabet (Ex. "a" becomes "c" when k is 2).
@@ -20,7 +32,7 @@
 
     <div class="middle" id="caesar">
         <h3>Caesar Encryption</h3>
-        <label for="caesar-encryption-textbox-1" >Message</label>
+        <label for="caesar-encryption-textbox-1" >Message</label><br>
         <input type="text" id="caesar-encryption-textbox-1" value="Hello world">
         <label for="caesar-encryption-textbox-2">Shift</label>
         <input type="text" id="caesar-encryption-textbox-2" value="15"><br><br>
@@ -34,18 +46,6 @@
         <input type="text" id="caesar-decryption-textbox-2"><br><br>
         <input type="submit" onclick="caesarDecryptionOutput()"><br>
         <p id="caesar-decryption-result">&nbsp;&nbsp;&nbsp;&nbsp;</p>
-    </div>
-
-    <div class="sidebar">
-        <a href="../index.html"><i class="fas fa-home fa-lg"></i></a>
-        <a href="../modulo/modulo.html">Modular Arithmetic</a>
-        <a href="../caesar/caesar.html">Caesar Cypher</a>
-        <a href="../vigenere/vigenere.html">Vigenere Cypher</a>
-        <a href="../diffie hellman/diffie-hellman.html">Diffie-Hellman</a>
-        <a href="../rsa/rsa.html">RSA</a>
-        <a href="../xor/xor.html">XOR Cypher</a>
-        <a href="../cryptology programs/cryptology-programs.html">Cryptology Programs</a>
-        <a href="../references/references.html">References</a>
     </div>
 </body>
 </html>
