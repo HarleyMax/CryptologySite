@@ -34,8 +34,8 @@
             This is done by, for each character, obtaining the ascii code and converting the ascii 
             code to a binary string of length 8.<br><br> Then, the binary version of the message is XORed with
             the binary version of the key. The key is repeated as necessary to match the length of the 
-            binary message. <br><br>This binary result is then converted back to a string using ascii. Any non-ascii characters 
-            will be denoted as .<br><br>
+            binary message. <br><br>This binary result is then converted back to a string using ascii. Any non-printable characters 
+            will be denoted as ?.<br><br>
 
             message: <input type="text" id="message-textbox" value="Hello World">
             key: <input type="text" id="key-textbox" value="This is an xor key">

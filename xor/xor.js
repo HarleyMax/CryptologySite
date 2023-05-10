@@ -13,7 +13,13 @@ function stringToBinary(str) {
     for (let i = 0; i < binary.length; i += 8) {
       const byte = binary.slice(i, i + 8);
       const charCode = parseInt(byte, 2);
+      console.log(charCode);
+      if(charCode > 31){
       str += String.fromCharCode(charCode);
+      }
+      else{
+        str += "?"
+      }
     }
     return str;
   }
